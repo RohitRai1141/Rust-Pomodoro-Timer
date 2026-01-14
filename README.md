@@ -168,9 +168,10 @@ Contributions are welcome! Feel free to:
 
 ## 📸 Screenshots
 <img width="1920" height="1080" alt="Screenshot_14-Jan_12-15-46_4512" src="https://github.com/user-attachments/assets/9a37b262-1733-4d02-bd29-e01e52bf8654" />
+<img width="1920" height="1080" alt="Screenshot_14-Jan_12-16-07_8002" src="https://github.com/user-attachments/assets/8120a8bf-3383-4af2-a21d-5dbb282f66c5" />
 <img width="1920" height="1080" alt="Screenshot_14-Jan_12-17-40_7113" src="https://github.com/user-attachments/assets/b174065b-9e39-4796-b850-fa8cb2df1c57" />
 <img width="1920" height="1080" alt="Screenshot_14-Jan_12-18-08_30748" src="https://github.com/user-attachments/assets/2c9c5232-ab67-4096-bca8-814c57278671" />
-<img width="1920" height="1080" alt="Screenshot_14-Jan_12-16-07_8002" src="https://github.com/user-attachments/assets/8120a8bf-3383-4af2-a21d-5dbb282f66c5" />
+
 
 
 ### Setup Screen
