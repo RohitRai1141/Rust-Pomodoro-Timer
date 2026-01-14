@@ -1,0 +1,8 @@
+[package]
+name = "pomodoro-timer"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.27"
+notify-rust = "4"
