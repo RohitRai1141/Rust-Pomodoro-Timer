@@ -479,6 +479,26 @@ fn play_sound() {
     }
 }
 
+fn stop_sound() {
+    use std::process::Command;
+    
+    eprintln!("🔇 Stopping sound");
+    
+    #[cfg(target_os = "windows")]
+    {
+        let _ = Command::new("taskkill")
+            .args(&["/F", "/IM", "mpv.exe"])
+            .output();
+    }
+    
+    #[cfg(not(target_os = "windows"))]
+    {
+        let _ = Command::new("pkill")
+            .arg("mpv")
+            .output();
+    }
+}
+
 fn run_app() -> io::Result<()> {
     let mut app = PomodoroApp::new();
     let mut stdout = io::stdout();
@@ -539,9 +559,11 @@ fn run_app() -> io::Result<()> {
                         } else if app.state == AppState::BreakPrompt {
                             match code {
                                 KeyCode::Enter => {
+                                    stop_sound();
                                     app.start_break();
                                 }
                                 KeyCode::Char('s') => {
+                                    stop_sound();
                                     // Skip break - go to next work session
                                     app.current_session += 1;
                                     if app.current_session > app.total_sessions {
@@ -560,7 +582,10 @@ fn run_app() -> io::Result<()> {
                             match code {
                                 KeyCode::Char(' ') => app.paused = !app.paused,
                                 KeyCode::Char('s') => {
-                                    if app.advance_timer() {
+                                    stop_sound();
+                                    let should_exit = app.advance_timer();
+                                    eprintln!("   After skip: state={:?}, should_exit={}", app.state, should_exit);
+                                    if should_exit {
                                         break;
                                     }
                                 }
